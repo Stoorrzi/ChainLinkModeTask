@@ -1,7 +1,7 @@
 # ChainLinkModeTask
 Template Code to fulfill the ChainLink Mode-Task
 
-
+"""
 type = "directrequest"
 schemaVersion = 1
 name = "JOB_NAME"
@@ -38,4 +38,5 @@ observationSource = """
     submit_tx    [type="ethtx" to="YOUR_CONTRACT_ADDRESS" data="$(encode_tx)"]
 
     decode_log -> decode_cbor -> fetch_1 -> parse_1 -> fetch_2 -> parse_2 -> fetch_3 -> parse_3 -> fetch_4 -> parse_4 -> fetch_5 -> parse_5 -> my_median_task -> encode_large -> encode_tx -> submit_tx
+"""
 """
