@@ -1,7 +1,7 @@
 # ChainLinkModeTask
 Template Code to fulfill the ChainLink Mode-Task
 
-"""
+```
 type = "directrequest"
 schemaVersion = 1
 name = "JOB_NAME"
@@ -9,7 +9,7 @@ contractAddress = "YOUR_CONTRACT_ADDRESS"
 maxTaskDuration = "0s"
 observationSource = """
     decode_log   [type="ethabidecodelog"
-                  abi="OracleRequest(bytes32 indexed specId, address requester, bytes32 requestId, uint256 payment, address callbackAddr, bytes4 callbackFunctionId, uint256 cancelExpiration, uint256 dataVersion, bytes data)"
+                  abi="OracleRequest(bytes32 indexed specId, address requester, bytes32 requestId, uint256 payment, address callbackAddr, bytes4            callbackFunctionId, uint256 cancelExpiration, uint256 dataVersion, bytes data)"
                   data="$(jobRun.logData)"
                   topics="$(jobRun.logTopics)"]
 
@@ -39,4 +39,4 @@ observationSource = """
 
     decode_log -> decode_cbor -> fetch_1 -> parse_1 -> fetch_2 -> parse_2 -> fetch_3 -> parse_3 -> fetch_4 -> parse_4 -> fetch_5 -> parse_5 -> my_median_task -> encode_large -> encode_tx -> submit_tx
 """
-"""
+```
